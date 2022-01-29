@@ -1,0 +1,29 @@
+<div class="card__list__container">
+  <mat-card *ngFor="let stocks of stockArray; index as i" class="card cards1">
+    <mat-card-header class="stock__title">
+      <mat-card-title>{{ stocks.title }}</mat-card-title>
+      <mat-card-subtitle>{{ stocks.market }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="card__content">
+      <table class="price__table">
+        <tr class="table__header">
+          <th>52 Week High</th>
+          <th>52 Week Low</th>
+        </tr>
+        <tr class="table__data">
+          <td>{{ stocks.fif_week_high }}</td>
+          <td>{{ stocks.fif_week_low }}</td>
+        </tr>
+      </table>
+    </mat-card-content>
+    <mat-card-actions align="start" class="actions">
+      <button mat-button class="delete__button">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">
+          delete
+        </mat-icon>
+        Delete Stock
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

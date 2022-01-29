@@ -1,0 +1,55 @@
+.card__list__container {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  justify-content: center;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+}
+
+.card {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+
+  margin: 0.3rem 0 0.3rem 0;
+}
+
+.card {
+  &:last-of-type {
+    margin-bottom: 2rem;
+  }
+  &:first-of-type {
+    margin-top: 2rem;
+  }
+}
+.stock__title {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.price__table {
+  .table__header {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    th {
+      padding: 0.5rem 1rem 0.5rem 1rem;
+    }
+  }
+
+  .table__data {
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    td {
+      padding: 0.2rem 1rem 0.2rem 1rem;
+    }
+  }
+}
+
+.actions {
+  padding-left: 5rem;
+
+  .delete__button {
+    color: white;
+    background-color: red;
+  }
+}

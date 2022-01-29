@@ -1,3 +1,46 @@
-<h1>Welcome to StockTrader App</h1>
+<main class="main__page">
+  <p>
+    <mat-toolbar class="main__toolbar">
+      <span class="logo__name">STOCK TRADERZ</span>
+      <span class="example-spacer"></span>
 
-<p>landing-page works!</p>
+      <a class="toggle__button" (click)="openToggleBar()">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+      </a>
+
+      <button mat-button class="btn-sm buttons" (click)="openLogin()">
+        Login
+      </button>
+      <button mat-button class="btn-sm buttons" (click)="openSignUp()">
+        Sign Up
+      </button>
+
+      <div class="vertical__buttons" [ngClass]="!visible ? 'close' : ''">
+        <button
+          mat-button
+          class="btn-sm vertical_buttons"
+          (click)="openLogin()"
+        >
+          Login
+        </button>
+        <button
+          mat-button
+          class="btn-sm vertical_buttons"
+          (click)="openSignUp()"
+        >
+          Sign Up
+        </button>
+      </div>
+    </mat-toolbar>
+  </p>
+
+  <section class="main__section">
+    <div class="main__heading text-capitalize">
+      <h1>Welcome to Stock Traderz</h1>
+    </div>
+    <div class="main__picture"></div>
+  </section>
+</main>
+<main-footer></main-footer>

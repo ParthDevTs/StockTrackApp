@@ -1,1 +1,102 @@
-<p>login works!</p>
+<div class="modal__main__body">
+  <div class="modal-header">
+    <h4 class="modal-title modal__title" id="modal-title">LOGIN</h4>
+    <button
+      type="button"
+      class="close"
+      aria-describedby="modal-title"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form action="" class="example-form">
+      <table #table class="login__table">
+        <tr class="username__row">
+          <td class="username__label">Username</td>
+          <td class="username__input">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input
+                type="email"
+                matInput
+                [formControl]="emailFormControl"
+                [errorStateMatcher]="matcher"
+                placeholder="Ex. pat@example.com"
+              />
+              <mat-hint>EmailID that you registered </mat-hint>
+              <mat-error
+                *ngIf="
+                  emailFormControl.hasError('email') &&
+                  !emailFormControl.hasError('required')
+                "
+              >
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="passwordFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr class="password__row">
+          <td class="password__label">Password</td>
+          <td class="password__input">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input
+                class="password"
+                type="password"
+                matInput
+                [formControl]="passwordFormControl"
+                [errorStateMatcher]="matcher"
+              />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+              >
+                <mat-icon>{{
+                  hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
+              </button>
+              <mat-hint *ngIf="!hide">
+                {{ passwordFormControl.value }}
+              </mat-hint>
+              <mat-error *ngIf="passwordFormControl.hasError('required')">
+                Password is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <mat-divider class="divider"></mat-divider>
+    <div class="modal__text">
+      <p>
+        <strong> Please Login to continue our services</strong>
+      </p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      mat-stroked-button
+      type="button"
+      class="close__button buttons"
+      (click)="modal.dismiss('cancel click')"
+    >
+      Cancel
+    </button>
+    <button
+      mat-raised-button
+      type="button"
+      color="primary"
+      class="login__buton buttons"
+      (click)="modal.close('Ok click')"
+      ngbAutofocus
+    >
+      Login
+    </button>
+  </div>
+</div>

@@ -10,6 +10,21 @@ import { HomeComponent } from './home/home.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { FooterComponent } from './shared/footer/footer.component';
+import { StockListComponent } from './stockPage/stock-list/stock-list.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import {MatDividerModule} from '@angular/material/divider'
 
 @NgModule({
   declarations: [
@@ -18,6 +33,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     LandingPageComponent,
     ErrorPageComponent,
+    SignUpComponent,
+    FooterComponent,
+    StockListComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +47,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       registrationStrategy: 'registerWhenStable:10000',
     }),
     BrowserAnimationsModule,
+    NgbModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatCardModule,
+    MatTableModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

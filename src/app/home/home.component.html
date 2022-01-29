@@ -1,1 +1,27 @@
-<p>home works!</p>
+<header class="stock__list__header">
+  <span class="stock__app__title">STOCK TRADERZ</span>
+  <button mat-button class="home__button" (click)="landingPage()">
+    <mat-icon>home</mat-icon>
+  </button>
+</header>
+
+<mat-drawer-container class="drawer__container">
+  <mat-drawer class="drawer" mode="side" opened>
+    <div class="side__drawer__container">
+      <div class="user__info">
+        <h2 class="user__name">Username</h2>
+        <h4 class="sub__user__info">Other Info</h4>
+      </div>
+
+      <div class="actions">
+        <button mat-button class="add__button">
+          <mat-icon class="mat-18">add</mat-icon>
+          Add More Stocks
+        </button>
+      </div>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content class="content">
+    <stocklist></stocklist>
+  </mat-drawer-content>
+</mat-drawer-container>
