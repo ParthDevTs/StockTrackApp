@@ -1,7 +1,7 @@
 <div class="card__list__container">
   <mat-card *ngFor="let stocks of stockArray; index as i" class="card cards1">
     <mat-card-header class="stock__title">
-      <mat-card-title>{{ stocks.title }}</mat-card-title>
+      <mat-card-title>{{ stocks.name }}</mat-card-title>
       <mat-card-subtitle>{{ stocks.market }}</mat-card-subtitle>
     </mat-card-header>
 
@@ -12,8 +12,8 @@
           <th>52 Week Low</th>
         </tr>
         <tr class="table__data">
-          <td>{{ stocks.fif_week_high }}</td>
-          <td>{{ stocks.fif_week_low }}</td>
+          <td>{{ stocks.highPrice }}</td>
+          <td>{{ stocks.lowPrice }}</td>
         </tr>
       </table>
     </mat-card-content>

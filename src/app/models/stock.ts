@@ -1,6 +1,10 @@
 export interface Stock {
-  title: string;
+  id?: number;
+  shortName: string;
+  name: string;
   market?: string;
-  fif_week_high: number;
-  fif_week_low: number;
+  highPrice: number;
+  lowPrice: number;
+  buyPrice?: number;
+  profileId?: string;
 }
