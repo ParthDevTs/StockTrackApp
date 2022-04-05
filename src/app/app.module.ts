@@ -24,10 +24,11 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSelectModule} from '@angular/material/select';
 
 import { MatDividerModule } from '@angular/material/divider';
-import { ToastComponent } from './shared/toast/toast.component';
 import { ToastContainerComponent } from './shared/toast/toast-container/toast-container.component';
+import { AddStockComponent } from './modals/add-stock/add-stock.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +40,8 @@ import { ToastContainerComponent } from './shared/toast/toast-container/toast-co
     SignUpComponent,
     FooterComponent,
     StockListComponent,
-    ToastComponent,
     ToastContainerComponent,
+    AddStockComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +65,7 @@ import { ToastContainerComponent } from './shared/toast/toast-container/toast-co
     ReactiveFormsModule,
     MatDividerModule,
     HttpClientModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],

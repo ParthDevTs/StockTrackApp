@@ -1,0 +1,141 @@
+<div class="modal__main__body">
+  <div class="modal-header">
+    <h4 class="modal-title modal__title" id="modal-title">Add Stock</h4>
+    <button
+      type="button"
+      class="close"
+      aria-describedby="modal-title"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form action="" class="example-form">
+      <table #table class="login__table">
+        <tr class="stockName__row">
+          <td class="stockName__label label">Stock Name</td>
+          <td class="stockName__input input">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input
+                type="text"
+                matInput
+                [formControl]="stockNameFormControl"
+                [errorStateMatcher]="matcher"
+                placeholder="Ex. Infosys"
+              />
+              <mat-hint>Stock you want to keep a track of. </mat-hint>
+              <mat-error *ngIf="stockNameFormControl.hasError('required')">
+                Please enter a Stock Name
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr class="market__row">
+          <td class="market__label label">
+            <mat-label>Market Type</mat-label>
+          </td>
+          <td class="market__input input">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Market Type</mat-label>
+              <select
+                [formControl]="marketFormControl"
+                id="market"
+                name="market"
+                matNativeControl
+                required
+              >
+                <option label="--select something --"></option>
+                <option value="NSE">NSE</option>
+                <option value="BSE">BSE</option>
+              </select>
+              <mat-error *ngIf="marketFormControl.hasError('required')">
+                This field is required
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr class="highPrice__row">
+          <td class="highPrice__label label">
+            <mat-label>52 Week High Price</mat-label>
+          </td>
+          <td class="highPrice__input input">
+            <mat-form-field appearance="fill">
+              <input
+                matInput
+                type="number"
+                [formControl]="highPriceFormControl"
+                [errorStateMatcher]="matcher"
+              />
+              <mat-error *ngIf="highPriceFormControl.hasError('required')">
+                Please enter a 52 Week High Price
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr class="lowPrice__row">
+          <td class="lowPrice__label label">
+            <mat-label>52 Week High Price</mat-label>
+          </td>
+          <td class="lowPrice__input input">
+            <mat-form-field appearance="fill">
+              <input
+                matInput
+                type="number"
+                [formControl]="lowPriceFormControl"
+                [errorStateMatcher]="matcher"
+              />
+              <mat-error *ngIf="lowPriceFormControl.hasError('required')">
+                Please enter a 52 Week Low Price
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr class="buyPrice__row">
+          <td class="buyPrice__label label">
+            <mat-label>Buy Price</mat-label>
+          </td>
+          <td class="buyPrice__input input">
+            <mat-form-field appearance="fill">
+              <input
+                matInput
+                type="number"
+                [formControl]="buyPriceFormControl"
+                [errorStateMatcher]="matcher"
+              />
+              <mat-error *ngIf="buyPriceFormControl.hasError('required')">
+                Please enter Buy Price
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <mat-divider class="divider"></mat-divider>
+    <div class="modal__text">
+      <p>
+        <strong> Click on Add Stock to add this stock on your WatchList</strong>
+      </p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      mat-stroked-button
+      type="button"
+      class="close__button buttons"
+      (click)="modal.dismiss('cancel click')"
+    >
+      Cancel
+    </button>
+    <button
+      mat-raised-button
+      type="button"
+      color="primary"
+      class="addStock__button buttons"
+      (click)="addStockToPofile()"
+      ngbAutofocus
+    >
+      Add Stock
+    </button>
+  </div>
+</div>

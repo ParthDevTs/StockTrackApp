@@ -1,6 +1,5 @@
 export interface Stock {
   id?: number;
-  shortName: string;
   name: string;
   market?: string;
   highPrice: number;

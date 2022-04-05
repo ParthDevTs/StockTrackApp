@@ -33,35 +33,33 @@ export class StockListComponent implements OnInit {
 
   stockArray: Stock[] = [
     {
-      shortName: 'Infy',
+      
       name: 'Infosys',
       market: 'BSE',
       highPrice: 123,
       lowPrice: 123,
     },
     {
-      shortName: 'PT',
+  
       name: 'Paytm',
       market: 'NSE',
       highPrice: 123,
       lowPrice: 123,
     },
     {
-      shortName: 'BB',
+  
       name: 'Bandhan Bank',
       market: 'BSE',
       highPrice: 123,
       lowPrice: 123,
     },
     {
-      shortName: '',
       name: 'Wipro',
       market: 'NSE',
       highPrice: 123,
       lowPrice: 123,
     },
     {
-      shortName: '',
       name: 'ICICI Bank',
       market: 'BSE',
       highPrice: 123,

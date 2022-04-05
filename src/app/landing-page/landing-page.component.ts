@@ -7,7 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import { ToastService } from '../Services/toast.service';
+
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -20,7 +20,6 @@ export class LandingPageComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     private router: Router,
-    private toastService: ToastService
   ) {}
 
   visible: boolean = false;
@@ -50,14 +49,10 @@ export class LandingPageComponent implements OnInit {
     modalRef.result.then(
       (onfulfilled) => {
         message = onfulfilled;
-        console.log(onfulfilled);
-        this.toastService.show(message);
-        alert(message);
       },
       (onrejected) => {
         message = onrejected;
-        console.log(onrejected);
-        this.toastService.show(message);
+
       }
     );
 
